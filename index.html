@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Web Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #080808;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      margin-top: 5px;
+      border-radius: 1px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #bbb;
+      text-decoration: none;
+      padding: 10px;
+      margin: 0 10px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+      font-weight: bold;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: #ffffff;
+      padding: 5px 10px;
+      text-shadow: 0 0 4px rgba(0, 188, 212, 0.5);
+    }
+
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      display: none;
+    }
+
+    section.active-section {
+      display: block;
+    }
+
+    footer {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 5px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .button-wrapper {
+      text-align: center;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    input, textarea {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      border: 1px solid #ccc;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #projects ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    #projects ul li {
+      margin: 10px 0;
+    }
+
+    #projects ul li a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    #projects ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .project-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0;
+    }
+
+    .project-detail.show {
+      max-height: 300px;
+      padding: 10px 0;
+    }
+
+    .project-title {
+      background: none;
+      border: none;
+      color: #007BFF;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      padding: 10px 0;
+      transition: color 0.3s;
+    }
+
+    .project-title:hover {
+      color: #0056b3;
+    }
+
+    .project-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      opacity: 0;
+      padding-left: 15px;
+      color: #444;
+    }
+
+    .project-details.active {
+      max-height: 300px;
+      opacity: 1;
+      margin-bottom: 10px;
+    }
+
+    .learn-more {
+      display: inline-block;
+      margin-top: 8px;
+      color: #007BFF;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .learn-more:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+
+    .project-title {
+      background-color: transparent;
+      border: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #333;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .project-title:hover {
+      color: #007BFF;
+      text-shadow: 0 0 4px rgba(0, 123, 255, 0.6);
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to My Web Page</h1>
+    <p>IOT Embedded projects and HTML,CSS,Script</p>
+  </header>
+
+  <nav>
+    <a href="#about" class="active" data-target="about">About Me</a>
+    <a href="#projects" data-target="projects">Projects</a>
+    <a href="#contact" data-target="contact">Contact</a>
+  </nav>
+
+  <section id="about" class="active-section">
+    <h2>About Me</h2>
+    <p>Hello! I'm a Engineering ECE Student passionate about coding, and building web apps. I love working with JavaScript, Python, and embedded systems.</p>
+  </section>
+
+  <section id="projects">
+    <h1>Projects</h1>
+    <ul>
+      <li>
+        <button class="project-title">Smart Parking System</button>
+        <div class="project-details">
+          <p>A system using RFID, ultrasonic sensors, and ESP8266 to automate parking and update logs to Google Sheets.</p>
+          <a href="smart-parking.html" class="learn-more">Learn More &raquo;</a>
+        </div>
+      </li>
+      <li>
+        <button class="project-title">Fingerprint-based Door Lock</button>
+        <div class="project-details">
+          <p>Uses Arduino and a fingerprint module to secure access, with optional email alerts.</p>
+          <a href="fingerprint-lock.html" class="learn-more">Learn More &raquo;</a>
+        </div>
+      </li>
+      <li>
+        <button class="project-title">Bluetooth Controlled Car</button>
+        <div class="project-details">
+          <p>An Arduino-based car that responds to Bluetooth commands from a mobile app.</p>
+          <a href="bluetooth-car.html" class="learn-more">Learn More &raquo;</a>
+        </div>
+      </li>
+      <li>
+        <button class="project-title">Person Detection and Alert</button>
+        <div class="project-details">
+          <p>A camera and motion sensor-based system that detects people and sends alert notifications.</p>
+          <a href="person-detection.html" class="learn-more">Learn More &raquo;</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" name="name" id="name" placeholder="Your Name" required><br>
+      <input type="email" name="email" id="email" placeholder="Your Email" required><br>
+      <textarea name="message" id="message" placeholder="Your Message" required></textarea><br>
+      <div class="button-wrapper">
+        <button class="button" type="submit">Send</button>
+        <p id="response" style="color: green;"></p>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 MADAN R. All rights reserved.
+  </footer>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzr51hL4Nce7S28Vw3ZLgijmAOa69nOSn56F-0LmZZm0s6z0uDw2S7NIo6ygTopGXHA/exec';
+
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const formData = new FormData(form);
+      fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(result => {
+        document.getElementById('response').textContent = "Message sent successfully!";
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        document.getElementById('response').textContent = "Error sending message.";
+      });
+    });
+
+    // Nav link active toggle & section display
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.dataset.target;
+
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        sections.forEach(section => {
+          if (section.id === targetId) {
+            section.classList.add('active-section');
+          } else {
+            section.classList.remove('active-section');
+          }
+        });
+      });
+    });
+
+    // Project details toggle
+    document.querySelectorAll('.project-title').forEach(button => {
+      button.addEventListener('click', () => {
+        const details = button.nextElementSibling;
+        document.querySelectorAll('.project-details.active').forEach(div => {
+          if (div !== details) div.classList.remove('active');
+        });
+        details.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
